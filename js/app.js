@@ -116,5 +116,5 @@ infoWindow = new google.maps.InfoWindow();
     ko.applyBindings(new viewModel());
   }
 function googleError(){
-
-}
+alert("google map wrong!")
+};
