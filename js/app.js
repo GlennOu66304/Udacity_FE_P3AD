@@ -4,25 +4,25 @@ var apiUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?sort=news
 
 var  placesData = [
 
-  {positon: {lat: 40.705665,lng: -74.017231},
-    title: 'The Ritz-Carlton New York'
+  {positon: {lat: 25.025338,lng: 121.579771},
+    title: '象山自然步道'
   },
 
   {
-  position: {lat: 40.758870,lng: -73.986231},
-  title: 'New York Marriott Marquis'
+  position: {lat: 24.220837,lng: 121.693100},
+  title: '花蓮清水斷崖'
 },
 
-{ position: {lat: 40.758179, lng: -73.989105},
-    title: 'The Westin New York  '
+{ position: {lat: 24.721554, lng: 120.901959},
+    title: '佛光山'
   }, 
 
-  { position: {lat: 40.73649,lng: -73.988175},
-    title: 'W New York '
+  { position: {lat: 22.610289,lng: 120.301898},
+    title: '高雄市立圖書館總館'
   }, 
 
-  { position: {lat:40.756599,lng:-73.988859},
-    title: 'Hilton Times Square'
+  { position: {lat:25.020343,lng: 120.301898},
+    title: '國立臺灣大學'
   }
 ];
 

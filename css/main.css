@@ -1,5 +1,13 @@
 #map {
     
-    height: 1500px;
-    width: :1500px;
+    height: 2000px;
+    width: :2000px;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    line-height: 1.42857143;
+    color: green;
+    background-color: #fff;
 }

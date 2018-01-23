@@ -9,22 +9,26 @@
 		<link rel="stylesheet" href="css/main.css"/>
 	</head>
 
-	<body>
+	<body >
+		<div class="container">
+			 <div class="row" >
 		<label for="drawer-toggle" id="drawer-toggle-label"></label>
 
-		<nav id="drawer">
+		<nav class="col-xs-3" id="drawer">
 			<input type="text" id="filterInput" data-bind="textinput: filterText" placeholder="Search for names..">
    <ul id="filter" data-bind="foreach:filteredList">
    	<li class="result" data-bind="text: title,click: $parent.listClick" ></li>
  </ul>
 </nav>
-		<div class="map" id="map" ></div>
-
+		<div class="col-xs-9"class="map" id="map" ></div>
+</div>
+</div>
 		<script src="js/lib/knockout-3.4.2.js" ></script>
 		<script src="js/lib/jquery 3.2.1.js"></script>
 		<script defer= "defer" src="js/app.js"></script>
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWKOKHKtSqnE1xFW6bzyRyoFRh2NiBzM8&callback=start"
 async defer onerror="googleError()"></script>
+
 	</body>
 
 </hrml>
