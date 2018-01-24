@@ -1,6 +1,5 @@
 var filterText = ko.observable("");
 var map, inforWindow;
-var apiUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?sort=newst&api-key=e0b93df3888e46909bf05877841c3512&q=";
 
 var placesData = [
 
@@ -77,19 +76,20 @@ var Place = function(data) {
                 self.marker.setAnimation(null);
             }, 2000);
         }
+var url =  "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+url  += '?' + $.param({
+  'api-key': "e0b93df3888e46909bf05877841c3512"
+});
+$.ajax({
+  url: url,
+  method: 'GET',
+}).done(function(result) {
+  console.log(result);
+}).fail(function(err) {
+  throw err;
+});
 
-
-        $.ajax({
-            url: apiUrl + self.title,
-            dataType: "json",
-            timeout: 5000
-        }).done(function(data) {
-            infoWindow.setContent(data.response.docs[0].snippet);
-            inforWindow.open(map, self.marker)
-        }).fail(function() {
-            alert("纽约时报错了")
-        });
-
+        
     });
 
 }
@@ -130,7 +130,7 @@ var viewModel = function() {
 function start() {
     map = new google.maps.Map(document.getElementById("map"), {
         center: placesData[2].position,
-        zoom: 13
+        zoom: 8
     });
     infoWindow = new google.maps.InfoWindow();
     ko.applyBindings(new viewModel());
