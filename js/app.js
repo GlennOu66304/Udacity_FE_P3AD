@@ -76,20 +76,20 @@ var Place = function(data) {
                 self.marker.setAnimation(null);
             }, 2000);
         }
-var url =  "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-url  += '?' + $.param({
-  'api-key': "e0b93df3888e46909bf05877841c3512"
-});
-$.ajax({
-  url: url,
-  method: 'GET',
-}).done(function(result) {
-  console.log(result);
-}).fail(function(err) {
-  throw err;
-});
+        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+        url += '?' + $.param({
+            'api-key': "e0b93df3888e46909bf05877841c3512"
+        });
+        $.ajax({
+            url: url,
+            method: 'GET',
+        }).done(function(result) {
+            infoWindow.setContent(result.response.docs[0].snippet);
+        }).fail(function(err) {
+            throw err;
+        });
 
-        
+
     });
 
 }
@@ -102,7 +102,6 @@ var viewModel = function() {
     placesData.forEach(function(place) {
         self.placesList.push(new Place(place))
     });
-
 
     this.placesList.forEach(function(place) {
         place.marker.setMap(map, place.position);

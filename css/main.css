@@ -1,13 +1,13 @@
-bbody {
+body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: white;
+    color: green;
     background-color: black;
 }
-
 #map {
+	
     height: 870px;
-    width:100%;
+  
 };
 
