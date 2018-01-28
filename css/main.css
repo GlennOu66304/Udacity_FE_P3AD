@@ -8,6 +8,22 @@ body {
 #map {
 	
     height: 870px;
+    width: 100%;
   
 };
+.row {
+ position: relative;  /* 为了下方 absolute 能够设定位置 top */
+}
+#drawer {
+ width: 60%;
+ background-color: black;
+ z-index: 50; /* 保持侧边栏在最顶层 */
+ top: 0;
+ position: absolute;
+ padding: 10px;
+}
+button {
+ border: 1px white solid;
+ float: right;
+}
 

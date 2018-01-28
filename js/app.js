@@ -96,17 +96,11 @@ var Place = function(data) {
 
 
 var viewModel = function() {
+     this.isShowSidebar = ko.observable(true);
+ this.toggleSidebar = function(){
+     
+ }
     var self = this;
-    var self = this;
-  self.locations = ko.observableArray(locationData);
-
-  self.sideNavWidth = ko.observable('');
-  self.openBtn = function() {
-    self.sideNavWidth('0');
-  };
-  self.closeBtn = function() {
-    self.sideNavWidth('-300px');
-  };
     this.placesList = [];
 
     placesData.forEach(function(place) {
