@@ -98,7 +98,12 @@ var Place = function(data) {
 var viewModel = function() {
      this.isShowSidebar = ko.observable(true);
  this.toggleSidebar = function(){
-     
+  var x = document.getElementById("drawer");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }   
  }
     var self = this;
     this.placesList = [];
