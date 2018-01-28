@@ -96,7 +96,7 @@ var Place = function(data) {
 
 
 var viewModel = function() {
-     this.isShowSidebar = ko.observable(true);
+this.isShowSidebar = ko.observable(true);
  this.toggleSidebar = function(){
   var x = document.getElementById("drawer");
     if (x.style.display === "none") {
