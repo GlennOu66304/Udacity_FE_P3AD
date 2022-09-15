@@ -2,8 +2,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: green;
-  background-color: black;
+  color: #5f6265;
+  background-color: #ffffff;
 }
 
 #map {
@@ -12,8 +12,9 @@ body {
   width: 100%;
 
 }
-
-;
+.col-xs-3{
+  color: #3c4043;
+}
 
 .row {
   position: relative;
@@ -21,19 +22,34 @@ body {
 }
 
 #drawer {
-  width: 60%;
-  background-color: black;
+  margin-top: 60px;
+  margin-left: 10px;
+  width: 20%;
+  background-color: #ffffff;
   z-index: 50;
   /* 保持侧边栏在最顶层 */
   top: 0;
   position: absolute;
   padding: 10px;
+  border-radius: 10px;
 }
 
+/* remove borders around html input
+https://stackoverflow.com/questions/14618028/remove-borders-around-html-input
+*/
+input {border:0;outline:0;}
+input:focus {outline:none!important;}
+
 button {
+  margin-top: 25px;
   border: 1px white solid;
   float: right;
+  /* height: 15px; */
+  color: #3c4043;
+  border-radius: 10px;
+  /* background-color: gray; */
 }
+
 
 .close-btn {
   float: right;
@@ -41,7 +57,7 @@ button {
 
 .close-btn,
 .open-btn {
-  background-color: black;
+  background-color: #ffffff;
   color: white;
   border-radius: 3px;
   border-style: none;
