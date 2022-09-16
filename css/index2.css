@@ -36,6 +36,7 @@ a {
 .offcanvas-start {
   color: white;
   text-align: center;
+  width:0px;
 }
 
 .btn-close {
