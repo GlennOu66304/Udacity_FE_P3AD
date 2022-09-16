@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <hrml lang="en">
+
   <head>
     <meta charset="utf-8" />
     <title>Udacity knockoutjs Map Location Project</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
     <!-- css use -->
     <link rel="stylesheet" href="css/main.css" />
   </head>
@@ -22,48 +19,36 @@
         <h3 class="col-xs-3">台湾好玩的地方</h3>
       </div> -->
 
-    <!-- search bar and dropdown option area -->
+      <!-- search bar and dropdown option area -->
 
-    <div class="row">
-      <h3 class="col-xs-3">台湾好玩的地方</h3>
-      <label for="drawer-toggle" id="drawer-toggle-label"></label>
+      <div class="row">
+        <h3 class="col-xs-3">台湾好玩的地方</h3>
+        <label for="drawer-toggle" id="drawer-toggle-label"></label>
 
-      <!-- toggle to hide or open the side bar -->
-      <button data-bind="click: toggleSidebar">Show/Hide Sidebar</button>
+        <!-- toggle to hide or open the side bar -->
+        <button data-bind="click: toggleSidebar">Show/Hide Sidebar</button>
 
-      <!--search area content  -->
-      <nav id="drawer" data-bind="visible: isShowSidebar">
-        <!-- search bar and input area -->
-        <input
-          type="text"
-          id="filterInput"
-          data-bind="textinput: filterText"
-          placeholder="Search for names.."
-        />
+        <!--search area content  -->
+        <nav id="drawer" data-bind="visible: isShowSidebar">
+          <!-- search bar and input area -->
+          <input type="text" id="filterInput" data-bind="textinput: filterText" placeholder="Search for names.." />
 
-        <!-- search result list -->
-        <ul id="filter" data-bind="foreach:filteredList">
-          <!-- click the text to show the location on the map with a red marker -->
-          <li
-            class="result"
-            data-bind="text: title,click: $parent.listClick"
-          ></li>
-        </ul>
-      </nav>
+          <!-- search result list -->
+          <ul id="filter" data-bind="foreach:filteredList">
+            <!-- click the text to show the location on the map with a red marker -->
+            <li class="result" data-bind="text: title,click: $parent.listClick"></li>
+          </ul>
+        </nav>
 
-      <!-- google map area -->
-      <div class="map" id="map"></div>
-    </div>
-    <!-- app.js, jqery,knockoutjs use -->
-    <script src="js/lib/knockout-3.4.2.js"></script>
-    <script src="js/lib/jquery 3.2.1.js"></script>
-    <script defer="defer" src="js/app.js"></script>
-    <!-- gooele map use : utilize the google error and start function use function in the app.js-->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWKOKHKtSqnE1xFW6bzyRyoFRh2NiBzM8&callback=start"
-      async
-      defer
-      onerror="googleError()"
-    ></script>
+        <!-- google map area -->
+        <div class="map" id="map"></div>
+      </div>
+      <!-- app.js, jqery,knockoutjs use -->
+      <script src="js/lib/knockout-3.4.2.js"></script>
+      <script src="js/lib/jquery 3.2.1.js"></script>
+      <script defer="defer" src="js/app.js"></script>
+      <!-- gooele map use : utilize the google error and start function use function in the app.js-->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8rtlvg5thByQ1V1gf5It6fFvxTpAxP-c&callback=start"
+        async defer onerror="googleError()"></script>
   </body>
 </hrml>
