@@ -1,54 +1,83 @@
 <!DOCTYPE html>
-<hrml lang="en">
+<html lang="en">
 
-  <head>
-    <meta charset="utf-8" />
-    <title>Udacity knockoutjs Map Location Project</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-    <!-- css use -->
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/index2.css" />
+    <!-- <link rel="stylesheet" href="css/main.css" /> -->
+    <title>BootStrap Learning</title>
+</head>
 
-  <body>
-    <div class="container">
+<body>
+    <div class="all">
 
-      <!-- heading -->
-      <!-- <div class="row">
-        <h3 class="col-xs-3">台湾好玩的地方</h3>
-      </div> -->
+        <div class="row header">
+            <!-- toggle button -->
+            <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="open bi bi-justify" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </a>
 
-      <!-- search bar and dropdown option area -->
+        </div>
 
-      <div class="row">
-        <h3 class="col-xs-3">台湾好玩的地方</h3>
-        <label for="drawer-toggle" id="drawer-toggle-label"></label>
+        <!-- side bar content -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">美国各个州</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- input area  -->
+                <div class=" input-area input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Input the name of the place to try"
+                        aria-label="Recipient's username" aria-describedby="button-addon2" id="filterInput" data-bind="textinput: filterText">
 
-        <!-- toggle to hide or open the side bar -->
-        <button data-bind="click: toggleSidebar">Show/Hide Sidebar</button>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="filter bi bi-filter-square-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm.5 5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1 0-1zM4 8.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm2 3a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                        Filter</button>
+                </div>
+                <!-- search result display -->
+                <div class="search-result" id="drawer">
+                    <!-- search result list -->
 
-        <!--search area content  -->
-        <nav id="drawer" data-bind="visible: isShowSidebar">
-          <!-- search bar and input area -->
-          <input type="text" id="filterInput" data-bind="textinput: filterText" placeholder="Search for names.." />
+                    <ul class="list-group" id="filter" data-bind="foreach:filteredList">
+                        <li class="list-group-item result" data-bind="text: title,click: $parent.listClick">
+                        </li>
 
-          <!-- search result list -->
-          <ul id="filter" data-bind="foreach:filteredList">
-            <!-- click the text to show the location on the map with a red marker -->
-            <li class="result" data-bind="text: title,click: $parent.listClick"></li>
-          </ul>
-        </nav>
+                    </ul>
 
-        <!-- google map area -->
-        <div class="map" id="map"></div>
-      </div>
-      <!-- app.js, jqery,knockoutjs use -->
-      <script src="js/lib/knockout-3.4.2.js"></script>
-      <script src="js/lib/jquery 3.2.1.js"></script>
-      <script defer="defer" src="js/app.js"></script>
-      <!-- gooele map use : utilize the google error and start function use function in the app.js-->
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8rtlvg5thByQ1V1gf5It6fFvxTpAxP-c&callback=start"
+                </div>
+            </div>
+        </div>
+
+        <!-- map area -->
+        <div class="row map " class="map" id="map">
+
+        </div>
+    </div>
+    <!-- app.js, jqery,knockoutjs use -->
+    <script src="js/lib/knockout-3.4.2.js"></script>
+    <script src="js/lib/jquery 3.2.1.js"></script>
+    <script src="js/lib/jquery 3.2.1.js"></script>
+    <script defer="defer" src="js/app.js"></script>
+    <script defer="defer" src="js/data.js"></script>
+    <!-- gooele map use : utilize the google error and start function use function in the app.js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8rtlvg5thByQ1V1gf5It6fFvxTpAxP-c&callback=start"
         async defer onerror="googleError()"></script>
-  </body>
-</hrml>
+</body>
+
+</html>

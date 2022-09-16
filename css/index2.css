@@ -1,0 +1,62 @@
+.open {
+  color: "#416793";
+  height: 20px;
+  margin-top: 15px;
+}
+a {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.all {
+  margin-left: 0px;
+  width: 100%;
+}
+/* header css */
+.header {
+  background-color: black;
+  margin-left: 0px;
+  padding-left: 0px;
+  height: 52px;
+}
+.show {
+  background-color: black;
+}
+
+.map {
+  height: 870px;
+  width: 100%;
+}
+.gmnoprint{
+    left:1100px;
+}
+/* side bar section css */
+.offcanvas-backdrop.show{
+    opacity: 0;
+}
+.offcanvas-start {
+  color: white;
+  text-align: center;
+}
+
+.btn-close {
+  background-color: white;
+}
+.offcanvas-title {
+  margin-left: 120px;
+}
+input {
+  border: 0;
+  outline: 0;
+}
+input:focus {
+  outline: none !important;
+}
+.filter {
+  margin-bottom: 5px;
+}
+.list-group-item{
+/* margin-bottom: 10px; */
+text-align: left;
+background-color: black;
+color:white;
+}
