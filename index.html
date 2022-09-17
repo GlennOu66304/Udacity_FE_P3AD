@@ -40,9 +40,9 @@
 
                 <!-- input area  -->
                 <div class=" input-area input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Input the name of the place to try"
-                        aria-label="Recipient's username" aria-describedby="button-addon2" id="filterInput"
-                        data-bind="textinput: inputKeyword">
+                    <input data-bind="textinput: inputKeyword" type="text" class="form-control"
+                        placeholder="Input the name of the place to try" aria-label="Recipient's username"
+                        aria-describedby="button-addon2" id="filterInput">
 
                     <button class="btn btn-outline-secondary" type="button" id="button-addon2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -55,11 +55,11 @@
 
 
                 <!-- search result display  -->
-                <div class="search-result" id="drawer">
+                <div class="search-result">
                     <!-- search result list -->
 
-                    <ul class="list-group" id="filter" data-bind="foreach:searchResult">
-                        <li class="list-group-item result" data-bind="text: title,click: $parent.listClick">
+                    <ul data-bind="foreach:searchResult" class="list-group" id="filter">
+                        <li data-bind="text: title,click: $parent.listClick" class="list-group-item result">
                         </li>
                     </ul>
 
@@ -68,11 +68,11 @@
         </div>
 
         <!-- map area -->
-        <div class="row map " class="map" id="map">
+        <div class="row map" id="map">
 
         </div>
     </div>
-    
+
     <!-- app.js, jqery,knockoutjs use -->
     <script src="js/lib/knockout-3.4.2.js"></script>
     <script src="js/lib/jquery 3.2.1.js"></script>

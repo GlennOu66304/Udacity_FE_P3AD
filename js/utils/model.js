@@ -3,25 +3,19 @@
 // knouck out js function use
 function viewModel() {
   var self = this;
-
   this.placesList = [];
   // push the makers to the map, use the markers function here
   let placesList = placesJson.forEach((place) => {
     // push the makers to the map, use the markers function here
-    self.placesList.push(new Markers(place));
-    // console.log(this.placesList)
-  });
-  // console.log(placesList);
-  // set marker function
-  let marker = self.placesList.forEach((place) => {
-    place.marker.setMap(map, place.position);
+    self.placesList.push(new markerProperty(place));
+    console.log(this.placesList)
   });
 
   // search result list display
-  this.searchResult = ko.computed(() => {
+  self.searchResult = ko.computed(() => {
     var searchResult = [];
     self.placesList.forEach((stateItem) => {
-      if (stateItem.visible()) {
+      if (stateItem.InData()) {
         searchResult.push(stateItem);
         // console.log(result)
         stateItem.marker.setMap(map, stateItem.position);

@@ -1,14 +1,16 @@
 var inputKeyword = ko.observable("");
 // do not change self function to arrow function, will cause the constructor error
-function Markers(markerItem) {
+function markerProperty(markerItem) {
   // console.log(markerItem)
   var self = this;
   self.title = markerItem.title;
   self.position = markerItem.position;
+  self.InData = markerItem.InData;
+  self.marker = markerItem.marker;
   // console.log(self.position)
 
-  // when you fileter the sidebar options text or click it, the marker in side bar will up
-  self.visible = ko.computed(() => {
+  // check if the input keyword is in the data
+  self.InData = ko.computed(() => {
     // convert the input keyword to toLowerCase
     var lowerCaseInputKeywords = inputKeyword().toLowerCase();
     // console.log(lowerCaseInputKeywords)
@@ -30,7 +32,7 @@ function Markers(markerItem) {
     animation: google.maps.Animation.DROP,
   });
 
-  // marker content
+  // marker click content
   google.maps.event.addListener(self.marker, "click", () => {
     //  console.log(self.markerProperty)
     infoWindow.setContent(self.title);

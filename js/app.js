@@ -12,6 +12,7 @@ function start() {
     zoom: 5,
   });
   infoWindow = new google.maps.InfoWindow();
+  
   ko.applyBindings(new viewModel());
 }
 
