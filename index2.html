@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/lib/knockout-3.4.2.js"></script>
+    <title>knockout Tutorila Learning</title>
+</head>
+
+<body>
+    <!-- data binding: data -bind id put here -->
+
+    <!-- make sure you know it is the text bind or value bind, it is simmilir in the state manange in 
+the react useState and setState:
+-->
+    <!-- html rendeing  
+Bindings
+https://knockoutjs.com/documentation/text-binding.html
+-->
+    <h2>Your seat reservations</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Passenger name</th>
+                <th>Meal</th>
+                <th>Surcharge</th>
+                <th></th>
+            </tr>
+        </thead>
+        <!-- Todo: Generate table body -->
+        <tbody data-bind="foreach: seats">
+            <tr>
+
+                <td data-bind="text: name"></td>
+                <td data-bind="text: meal().mealName"></td>
+                <td data-bind="text: meal().price"></td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+    <script>
+        // data change bindng
+        // Using the State Hook
+        // https://reactjs.org/docs/hooks-state.html
+        // set state
+        // Class to represent a row in the seat reservations grid
+        function SeatReservation(name, initialMeal) {
+            var self = this;
+            self.name = name;
+            self.meal = ko.observable(initialMeal);
+        }
+
+        // Overall viewmodel for this screen, along with initial state
+        function ReservationsViewModel() {
+            var self = this;
+
+            // Non-editable catalog data - would come from the server
+            self.availableMeals = [
+                { mealName: "Standard (sandwich)", price: 0 },
+                { mealName: "Premium (lobster)", price: 34.95 },
+                { mealName: "Ultimate (whole zebra)", price: 290 }
+            ];
+            console.log(this.availableMeals)
+            // Editable data
+            self.seats = ko.observableArray([
+                new SeatReservation("Steve", self.availableMeals[0]),
+                new SeatReservation("Bert", self.availableMeals[1])
+            ]);
+           console.log(self.seats)
+        }
+      
+        ko.applyBindings(new ReservationsViewModel());
+
+
+        // update the value
+        // Activates knockout.js
+
+        // initial data
+
+        //    useState set the initial value
+       
+
+    </script>
+
+</body>
+
+</html>
