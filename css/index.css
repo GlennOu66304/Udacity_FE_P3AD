@@ -36,9 +36,11 @@ a {
 .offcanvas-start {
   color: white;
   text-align: center;
-  width:0px;
-}
 
+}
+.sidebar{
+  width: 0;
+}
 .btn-close {
   background-color: white;
 }
