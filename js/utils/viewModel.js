@@ -9,7 +9,7 @@ function viewModel() {
   placesJson.forEach((place) => {
     // push the makers to the map, use the markers function here
     self.placesList.push(new stateItemProperty(place));
-    console.log(self.placesList);
+    // console.log(self.placesList);
   });
 
   // search result list display
