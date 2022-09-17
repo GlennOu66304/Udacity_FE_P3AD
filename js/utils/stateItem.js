@@ -1,16 +1,16 @@
 var inputKeyword = ko.observable("");
 // do not change self function to arrow function, will cause the constructor error
-function markerProperty(markerItem) {
-  // console.log(markerItem)
+function stateItemProperty(stateItem) {
+
   var self = this;
-  self.title = markerItem.title;
-  self.position = markerItem.position;
-  self.InData = markerItem.InData;
-  self.marker = markerItem.marker;
-  // console.log(self.position)
+  self.title = stateItem.title;
+  self.position = stateItem.position;
+  self.InUS = stateItem.InUS;
+  self.marker = stateItem.marker;
+  self.markerContent="marker content"
 
   // check if the input keyword is in the data
-  self.InData = ko.computed(() => {
+  self.InUS = ko.computed(() => {
     // convert the input keyword to toLowerCase
     var lowerCaseInputKeywords = inputKeyword().toLowerCase();
     // console.log(lowerCaseInputKeywords)
@@ -34,8 +34,10 @@ function markerProperty(markerItem) {
 
   // marker click content
   google.maps.event.addListener(self.marker, "click", () => {
-    //  console.log(self.markerProperty)
-    infoWindow.setContent(self.title);
+  //  marker coontent, you can get from the top value, but it needs to be the string
+  
+    infoWindow.setContent(self.markerContent);
+
     infoWindow.open(map, self.marker);
 
     // marker animation effect

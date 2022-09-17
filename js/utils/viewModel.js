@@ -7,7 +7,7 @@ function viewModel() {
   // push the makers to the map, use the markers function here
   let placesList = placesJson.forEach((place) => {
     // push the makers to the map, use the markers function here
-    self.placesList.push(new markerProperty(place));
+    self.placesList.push(new stateItemProperty(place));
     console.log(this.placesList)
   });
 
@@ -15,7 +15,7 @@ function viewModel() {
   self.searchResult = ko.computed(() => {
     var searchResult = [];
     self.placesList.forEach((stateItem) => {
-      if (stateItem.InData()) {
+      if (stateItem.InUS()) {
         searchResult.push(stateItem);
         // console.log(result)
         stateItem.marker.setMap(map, stateItem.position);
