@@ -1,14 +1,15 @@
 // do not change this function to arrow function, will cause the constructor error
 
 // knouck out js function use
+
 function viewModel() {
   var self = this;
-  this.placesList = [];
+  self.placesList = [];
   // push the makers to the map, use the markers function here
-  let placesList = placesJson.forEach((place) => {
+  placesJson.forEach((place) => {
     // push the makers to the map, use the markers function here
     self.placesList.push(new stateItemProperty(place));
-    console.log(this.placesList)
+    console.log(self.placesList);
   });
 
   // search result list display
